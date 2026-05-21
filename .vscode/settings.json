@@ -64,18 +64,29 @@
         "variant": "cpp"
     },
 
-    // ReaderPaper: add a PowerShell profile that dot-sources the workspace powershell.ps1
+    // M5ReadPaper 终端 Profile: 开启时自动 dot-source 构建环境脚本
     "terminal.integrated.profiles.windows": {
-        "ReaderPaper PowerShell": {
+        "M5ReadPaper Build Shell": {
             "source": "PowerShell",
             "icon": "terminal-powershell",
-            "args": ["-NoExit", "-Command", ". '${workspaceFolder}\\powershell.ps1'"]
+            "args": ["-NoExit", "-Command", ". '${workspaceFolder}\\scripts\\load-build-env.ps1'"]
         }
     },
 
-    // Keep the custom profile available, but use stock PowerShell as default so tasks run directly.
+    // 默认使用系统 PowerShell, M5ReadPaper 终端可手动切换
     "terminal.integrated.defaultProfile.windows": "PowerShell",
 
+    // clangd 配置: C++17, ESP32-S3 目标
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders",
+        "--log=error"
+    ],
+
+    // 预处理宏色调 (降低视觉噪音)
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {

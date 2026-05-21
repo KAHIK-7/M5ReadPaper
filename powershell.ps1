@@ -1,11 +1,3 @@
-param(
-    [string]$Command,
-    [Parameter(ValueFromRemainingArguments = $true)]
-    [string[]]$CommandArgs
-)
-
-# Workspace shell bootstrap script.
-# When VS Code tasks append "-Command ...", execute that command here.
-if ($Command) {
-    & $Command @CommandArgs
-}
+# M5ReadPaper workspace bootstrap
+# Dot-source 构建环境脚本
+. "$PSScriptRoot\scripts\load-build-env.ps1"

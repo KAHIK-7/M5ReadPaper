@@ -1,10 +1,10 @@
-﻿{
+{
     "version": "2.0.0",
     "tasks": [
         {
             "label": "PlatformIO: Build",
             "type": "shell",
-            "command": "C:\\Users\\Claud\\.platformio\\penv\\Scripts\\platformio.exe",
+            "command": "platformio",
             "args": [
                 "run"
             ],
@@ -14,45 +14,9 @@
             "group": "build"
         },
         {
-            "label": "Build 1bit Cache",
+            "label": "PlatformIO: Upload (COM4)",
             "type": "shell",
-            "command": "C:\\Users\\Claud\\.platformio\\penv\\Scripts\\platformio.exe",
-            "args": [
-                "run"
-            ],
-            "problemMatcher": [
-                "$platformio"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "Build Debug Font",
-            "type": "shell",
-            "command": "C:\\Users\\Claud\\.platformio\\penv\\Scripts\\platformio.exe",
-            "args": [
-                "run"
-            ],
-            "problemMatcher": [
-                "$platformio"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "Build Unicode Fix",
-            "type": "shell",
-            "command": "C:\\Users\\Claud\\.platformio\\penv\\Scripts\\platformio.exe",
-            "args": [
-                "run"
-            ],
-            "problemMatcher": [
-                "$platformio"
-            ],
-            "group": "build"
-        },
-        {
-            "label": "Build and Upload Debug",
-            "type": "shell",
-            "command": "C:\\Users\\Claud\\.platformio\\penv\\Scripts\\platformio.exe",
+            "command": "platformio",
             "args": [
                 "run",
                 "--target",
@@ -60,23 +24,53 @@
                 "--upload-port",
                 "COM4"
             ],
-            "isBackground": false,
             "problemMatcher": [
                 "$platformio"
             ],
             "group": "build"
         },
         {
-            "label": "Build",
+            "label": "PlatformIO: Upload SPIFFS (COM4)",
             "type": "shell",
-            "command": "C:\\Users\\Claud\\.platformio\\penv\\Scripts\\platformio.exe",
+            "command": "platformio",
             "args": [
-                "run"
+                "run",
+                "--target",
+                "uploadfs",
+                "--upload-port",
+                "COM4"
             ],
             "problemMatcher": [
                 "$platformio"
             ],
             "group": "build"
+        },
+        {
+            "label": "PlatformIO: Clean",
+            "type": "shell",
+            "command": "platformio",
+            "args": [
+                "run",
+                "--target",
+                "clean"
+            ],
+            "problemMatcher": [
+                "$platformio"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "PlatformIO: Monitor",
+            "type": "shell",
+            "command": "platformio",
+            "args": [
+                "device",
+                "monitor",
+                "--baud",
+                "115200"
+            ],
+            "isBackground": true,
+            "problemMatcher": []
         }
     ]
 }

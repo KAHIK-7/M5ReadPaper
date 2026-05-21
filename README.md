@@ -79,6 +79,7 @@ Y.A.P.T.R. — Yet Another PaperS3 Text Reader
 
 ## 关键文档
 
+- **新手开发指南**：`/docs/DEVELOPMENT.md`, 环境搭建 SOP、工具使用、项目结构速览 ★ 新人必读
 - 顶层架构：`/docs/ARCHITECTURE.md`, 概述和状态机相关
 - 字体处理： `/docs/FONTS.md`,字体生成，实现相关；
 - TINYUSB： `/docs/TINYUSB.md`，记录了混合框架下Tinyusb的一些使用注意；
